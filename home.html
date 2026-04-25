@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mr C.tech | Business Portal</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #141e30, #243b55);
+            color: white;
+        }
+
+        /* NAVIGATION */
+        .nav {
+            background: black;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        .nav button:hover {
+            color: #00f2fe;
+        }
+
+        /* CONTAINER */
+        .container {
+            width: 70%;
+            margin: 30px auto;
+            background: rgba(0,0,0,0.5);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+            animation: fade 0.5s ease-in-out;
+        }
+
+        @keyframes fade {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        .card {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .logout {
+            background: red;
+            color: white;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .nav button {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<div class="nav">
+    <button onclick="show('home')">Home</button>
+    <button onclick="show('services')">Services</button>
+    <button onclick="show('about')">About</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <!-- HOME -->
+    <div id="home" class="section active">
+
+        <!-- WELCOME TITLE -->
+        <h1>Welcome to Mr C.tech 👋</h1>
+
+        <!-- LOGIN USER DISPLAY -->
+        <h3>Build your business with ours</h3>
+
+        <div class="card">
+            <h2>Business Information</h2>
+            <p><strong>Owner:</strong> Charmaine Madileng</p>
+            <p><strong>Contact:</strong> 079 440 3706</p>
+            <p><strong>Location:</strong> Marble hall, South Africa</p>
+        </div>
+
+        <!-- WHATSAPP BUTTON -->
+        <a href="https://wa.me/27794403706" target="_blank">
+            <button class="btn whatsapp">💬 Chat on WhatsApp </button>
+        </a>
+
+    </div>
+
+    <!-- SERVICES -->
+    <div id="services" class="section">
+        <h1>Our Services</h1>
+
+        <div class="card">✔ Website Development</div>
+        <div class="card">✔ Business Registration</div>
+        <div class="card">✔ Online Business Setup</div>
+        <div class="card">✔ Tech & Digital Support</div>
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="section">
+        <h1>About Mr C.tech</h1>
+
+        <div class="card">
+            Mr C.tech is a modern digital business platform focused on helping people
+            start businesses and grow online using technology.
+        </div>
+    </div>
+
+    <!-- LOGOUT -->
+    <a href="/logout">
+        <button class="btn logout">Logout</button>
+    </a>
+
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function show(section) {
+    let sections = document.querySelectorAll(".section");
+
+    sections.forEach(s => {
+        s.classList.remove("active");
+    });
+
+    document.getElementById(section).classList.add("active");
+}
+</script>
+
+</body>
+</html>
